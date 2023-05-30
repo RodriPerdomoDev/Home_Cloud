@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const PORT = 8080 || process.env.PORT;
-const router = require("./controllers/filesController");
+const router = require("./Controllers/filesController");
 const fileUpload = require("express-fileupload");
-const directoryRouter = require("./controllers/directoryController");
+const directoryRouter = require("./Controllers/directoryController");
 const cors = require("cors");
 require("dotenv").config();
 
