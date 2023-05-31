@@ -7,10 +7,14 @@ let uploadDirectory = (req, res) => {
   if (!req.files) res.status(404).json({ message: "File not Found!" });
   let archivo = req.files.archivo;
   let ruta = discoDuroPath + path.join("/" + params + "/" + archivo.name);
-  archivo.mv(ruta, (err) => {
-    if (err) res.status(500).json({ message: err });
-    res.status(201).json({ message: "File moved to Directory" });
-  });
+  try {
+    archivo.mv(ruta, (err) => {
+      if (err) return res.status(404).json({ message: "Directory not found!" });
+      res.status(201).json({ message: "File moved to Directory" });
+    });
+  } catch (err) {
+    res.status(500).json({ message: err });
+  }
 };
 
 module.exports = uploadDirectory;
