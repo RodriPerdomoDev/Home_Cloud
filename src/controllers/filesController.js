@@ -2,7 +2,7 @@ const express = require("express");
 const routes = express.Router();
 const donwloadFiles = require("../Services/FileServices/downloadFiles");
 const uploadFile = require("../Services/FileServices/uploadFile");
-const readFiles = require("../Services/FileServices/ReadFiles");
+const readFiles = require("../Services/FileServices/readFiles");
 const deleteFiles = require("../Services/FileServices/deleteFiles");
 
 //Subir archivos
