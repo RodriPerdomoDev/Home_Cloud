@@ -6,7 +6,7 @@ const discoDuroPath = path.join(process.env.RUTA_DRIVE);
 let deleteFromDirectory = (req, res) => {
   let archivo = req.params.file;
   let directorio = req.params.directory;
-  let ruta = discoDuroPath + path.join("/" + directorio);
+  let ruta = discoDuroPath + path.join("/" + directorio.replace("_", " "));
   try {
     fs.readdir(ruta, (error, files) => {
       if (error)

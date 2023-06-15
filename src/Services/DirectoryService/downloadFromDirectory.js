@@ -9,7 +9,8 @@ let downloadFromDirectory = (req, res) => {
   let rutaArchivoDescargar;
   const archivo = req.params.file;
   const directorio = req.params.directory;
-  let rutaArchivo = discoDuroPath + path.join("/" + directorio);
+  let rutaArchivo =
+    discoDuroPath + path.join("/" + directorio.replace("_", " "));
   try {
     fs.readdir(rutaArchivo, (err, files) => {
       if (err)
